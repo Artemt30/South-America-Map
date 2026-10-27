@@ -1,9 +1,10 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>South America Strategy</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><style>body{margin:0;background:#0d1722;color:#e6f0f6;font:15px system-ui}header{padding:15px 18px;background:#122535}h1{font-size:19px;margin:0 0 5px}small{color:#a4b7c3}main{padding:12px}.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:10px 2px}input{accent-color:#38a8e0}#map{height:68vh;min-height:410px;border-radius:12px;background:#10212d}#info{padding:12px;background:#173044;border-radius:10px;margin-top:10px;line-height:1.5}.leaflet-container{background:#0c2332}.city-dot{border-radius:50%;background:#39a9ed;border:1px solid white;box-shadow:0 0 4px #125273}.cluster-dot{border-radius:50%;background:#207ca8;border:2px solid #bde6ff;color:white;text-align:center;font:bold 12px system-ui;display:grid;place-items:center}</style></head><body><header><h1>South America Strategy</h1><small>Карта v0.3 • кампания не запущена</small></header><main><div class="controls"><label><input id="potential" type="checkbox"> Потенциальные точки</label><small id="status">Загрузка каталога…</small></div><div id="map"></div><div id="info">Включи слой «Потенциальные точки». На общем масштабе поселения группируются; при приближении доступны отдельные населённые пункты.</div></main><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>South America Strategy</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><style>body{margin:0;background:#0d1722;color:#e6f0f6;font:15px system-ui}header{padding:15px 18px;background:#122535}h1{font-size:19px;margin:0 0 5px}small{color:#a4b7c3}main{padding:12px}.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:10px 2px}input{accent-color:#38a8e0}#map{height:68vh;min-height:410px;border-radius:12px;background:#10212d}#info{padding:12px;background:#173044;border-radius:10px;margin-top:10px;line-height:1.5}.leaflet-container{background:#0c2332}.city-dot{border-radius:50%;background:#39a9ed;border:1px solid white;box-shadow:0 0 4px #125273}.cluster-dot{border-radius:50%;background:#207ca8;border:2px solid #bde6ff;color:white;text-align:center;font:bold 12px system-ui;display:grid;place-items:center}</style></head><body><header><h1>South America Strategy</h1><small>Карта v0.4 • кампания не запущена</small></header><main><div class="controls"><label><input id="potential" type="checkbox"> Потенциальные точки</label><label><input id="assets" type="checkbox" checked> Объекты и разведка</label><small id="status">Загрузка каталога…</small></div><div id="map"></div><div id="info">Включи слой «Потенциальные точки». На общем масштабе поселения группируются; при приближении доступны отдельные населённые пункты.</div></main><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>
 const map=L.map('map',{preferCanvas:true}).setView([-15,-60],4);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap contributors • GeoNames CC BY 4.0'}).addTo(map);
 const status=document.getElementById('status'),toggle=document.getElementById('potential'),info=document.getElementById('info');
 const countries=['AR','BO','BR','CL','CO','EC','GY','GF','PY','PE','SR','UY','VE','FK'];
 let places=[],loaded=false,loading=null,layer=L.layerGroup().addTo(map),renderId=0;
+let visibleAssets=[],assetLayer=L.layerGroup().addTo(map);
 const sample=[['Мараба',-5.3686,-49.1178],['Лима',-12.0464,-77.0428],['Ика',-14.0678,-75.7286],['Богота',4.711,-74.0721],['Буэнос-Айрес',-34.6037,-58.3816]];
 async function load(){
  if(loaded)return;
@@ -42,4 +43,34 @@ function render(){
 let debounce;map.on('moveend zoomend',()=>{clearTimeout(debounce);debounce=setTimeout(render,250)});
 toggle.addEventListener('change',async()=>{if(!toggle.checked){render();return}status.textContent='Загрузка…';try{await load();render()}catch(e){status.textContent='Полный каталог ещё не опубликован';info.textContent='Подготовлен импорт GeoNames. После первого запуска сборки GitHub Actions здесь появятся все населённые пункты из каталога. '+e.message;toggle.checked=false}});
 fetch('data/places/manifest.json',{method:'HEAD'}).then(r=>{status.textContent=r.ok?'Каталог готов • включи слой':'Ожидается первая сборка каталога'}).catch(()=>{status.textContent='Ожидается первая сборка каталога'});
+
+// Real assets use their own layer, never the settlement clustering or 350-marker cap.
+// Only player-visible projection is consumed here; hidden enemy state must stay private.
+const assetToggle=document.getElementById('assets');
+function renderAssets(){
+ assetLayer.clearLayers();
+ if(!assetToggle.checked)return;
+ for(const a of visibleAssets){
+  if(!Number.isFinite(a.lat)||!Number.isFinite(a.lon))continue;
+  const isOwn=a.owner==='AT';
+  const icon=L.divIcon({className:'',html:'<div style="background:'+(isOwn?'#46c28e':'#efb36a')+';border:2px solid #fff;border-radius:5px;min-width:20px;height:20px;display:grid;place-items:center;box-shadow:0 0 6px #0009;font-size:12px">'+(a.type==='radar'?'◉':a.type==='factory'?'⚙':a.type==='base'?'◆':'■')+'</div>',iconSize:[24,24],iconAnchor:[12,12]});
+  L.marker([a.lat,a.lon],{icon,zIndexOffset:1000}).addTo(assetLayer).on('click',()=>{
+   const lines=[a.name||a.id||'Объект','Тип: '+(a.type||'не указан'),'Принадлежность: '+(isOwn?'наша':a.owner||'неизвестна'),'Состояние: '+(a.status||'неизвестно')];
+   if(a.details&&typeof a.details==='object')for(const [key,value] of Object.entries(a.details))lines.push(key+': '+String(value));
+   info.textContent=lines.join(' • ');
+  });
+ }
+}
+async function loadVisibleAssets(){
+ try{
+  const response=await fetch('data/visible-state.json',{cache:'no-cache'});
+  if(!response.ok)throw Error('HTTP '+response.status);
+  const payload=await response.json();
+  if(!Array.isArray(payload.assets))throw Error('Неверный формат assets');
+  visibleAssets=payload.assets.filter(a=>a&&typeof a==='object');
+  renderAssets();
+ }catch(error){info.textContent='Не удалось загрузить видимые игровые объекты: '+error.message}
+}
+assetToggle.addEventListener('change',renderAssets);
+loadVisibleAssets();
 </script></body></html>
