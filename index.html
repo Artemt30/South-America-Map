@@ -1,4 +1,4 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>South America Strategy</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><style>body{margin:0;background:#0d1722;color:#e6f0f6;font:15px system-ui}header{padding:15px 18px;background:#122535}h1{font-size:19px;margin:0 0 5px}small{color:#a4b7c3}main{padding:12px}.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:10px 2px}input{accent-color:#38a8e0}#map{height:68vh;min-height:410px;border-radius:12px;background:#10212d}#info{padding:12px;background:#173044;border-radius:10px;margin-top:10px;line-height:1.5}.leaflet-container{background:#0c2332}.city-dot{border-radius:50%;background:#39a9ed;border:1px solid white;box-shadow:0 0 4px #125273}.cluster-dot{border-radius:50%;background:#207ca8;border:2px solid #bde6ff;color:white;text-align:center;font:bold 12px system-ui;display:grid;place-items:center}</style></head><body><header><h1>South America Strategy</h1><small>Карта v0.2 • кампания не запущена</small></header><main><div class="controls"><label><input id="potential" type="checkbox"> Потенциальные точки</label><small id="status">Загрузка каталога…</small></div><div id="map"></div><div id="info">Включи слой «Потенциальные точки». На общем масштабе поселения группируются; при приближении доступны отдельные населённые пункты.</div></main><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>South America Strategy</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><style>body{margin:0;background:#0d1722;color:#e6f0f6;font:15px system-ui}header{padding:15px 18px;background:#122535}h1{font-size:19px;margin:0 0 5px}small{color:#a4b7c3}main{padding:12px}.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:10px 2px}input{accent-color:#38a8e0}#map{height:68vh;min-height:410px;border-radius:12px;background:#10212d}#info{padding:12px;background:#173044;border-radius:10px;margin-top:10px;line-height:1.5}.leaflet-container{background:#0c2332}.city-dot{border-radius:50%;background:#39a9ed;border:1px solid white;box-shadow:0 0 4px #125273}.cluster-dot{border-radius:50%;background:#207ca8;border:2px solid #bde6ff;color:white;text-align:center;font:bold 12px system-ui;display:grid;place-items:center}</style></head><body><header><h1>South America Strategy</h1><small>Карта v0.3 • кампания не запущена</small></header><main><div class="controls"><label><input id="potential" type="checkbox"> Потенциальные точки</label><small id="status">Загрузка каталога…</small></div><div id="map"></div><div id="info">Включи слой «Потенциальные точки». На общем масштабе поселения группируются; при приближении доступны отдельные населённые пункты.</div></main><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>
 const map=L.map('map',{preferCanvas:true}).setView([-15,-60],4);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap contributors • GeoNames CC BY 4.0'}).addTo(map);
 const status=document.getElementById('status'),toggle=document.getElementById('potential'),info=document.getElementById('info');
@@ -13,18 +13,33 @@ async function load(){
  loaded=true;status.textContent='Населённых пунктов: '+places.length.toLocaleString('ru-RU');})();
  try{await loading;}finally{loading=null;}
 }
-function render(){layer.clearLayers();if(!toggle.checked)return;
- const z=map.getZoom(),b=map.getBounds().pad(.12),cell=z<6?1.8:z<8?.55:z<10?.14:z<12?.035:0;
- const groups=new Map();let visible=0;
- for(const p of places){const lat=p[2],lon=p[3];if(!b.contains([lat,lon]))continue;visible++;
- const key=cell?Math.floor(lat/cell)+':'+Math.floor(lon/cell):String(p[0]);
- let g=groups.get(key);if(!g){g={n:0,lat:0,lon:0,first:p};groups.set(key,g)}g.n++;g.lat+=lat;g.lon+=lon;
+function render(){
+ layer.clearLayers();if(!toggle.checked||!loaded)return;
+ const z=map.getZoom(),b=map.getBounds().pad(.05);
+ // ~3x coarser spatial cells; cap markers on every zoom level for mobile.
+ const base=z<6?1.8:z<8?.55:z<10?.14:z<12?.035:.009;
+ let cell=base*3,groups=new Map(),visible=0;
+ const selected=[];
+ for(const p of places){if(b.contains([p[2],p[3]])){selected.push(p);visible++}}
+ function groupBy(step){
+  const result=new Map();
+  for(const p of selected){const key=Math.floor(p[2]/step)+':'+Math.floor(p[3]/step);
+   let g=result.get(key);if(!g){g={n:0,lat:0,lon:0,first:p};result.set(key,g)}
+   g.n++;g.lat+=p[2];g.lon+=p[3];}
+  return result;
  }
- const frag=document.createDocumentFragment();let shown=0;
- for(const g of groups.values()){const lat=g.lat/g.n,lon=g.lon/g.n;const marker=L.marker([lat,lon],{icon:L.divIcon({className:g.n>1?'cluster-dot':'city-dot',html:g.n>1?String(g.n):'',iconSize:g.n>1?[30,30]:[10,10],iconAnchor:g.n>1?[15,15]:[5,5]})});marker.on('click',()=>{if(g.n>1){map.setView([lat,lon],Math.min(15,z+2))}else{const p=g.first;info.textContent=p[1]+' — потенциальная точка строительства. GeoNames ID: '+p[0]+'; координаты: '+p[2]+', '+p[3]+'; страна определяется географическим каталогом.'}});layer.addLayer(marker);shown++;}
- status.textContent='На экране: '+visible.toLocaleString('ru-RU')+' точек • '+shown.toLocaleString('ru-RU')+' маркеров';
+ groups=groupBy(cell);
+ // Ensure mobile DOM never receives thousands of marker nodes.
+ for(let i=0;i<12&&groups.size>350;i++){cell*=1.6;groups=groupBy(cell)}
+ for(const g of groups.values()){
+  const lat=g.lat/g.n,lon=g.lon/g.n;
+  const marker=L.marker([lat,lon],{icon:L.divIcon({className:g.n>1?'cluster-dot':'city-dot',html:g.n>1?String(g.n):'',iconSize:g.n>1?[30,30]:[10,10],iconAnchor:g.n>1?[15,15]:[5,5]})});
+  marker.on('click',()=>{if(g.n>1){map.setView([lat,lon],Math.min(18,z+2))}else{const p=g.first;info.textContent=p[1]+' — потенциальная точка строительства. GeoNames ID: '+p[0]+'; координаты: '+p[2]+', '+p[3]+'; страна определяется географическим каталогом.'}});
+  layer.addLayer(marker);
+ }
+ status.textContent='На экране: '+visible.toLocaleString('ru-RU')+' точек • '+groups.size.toLocaleString('ru-RU')+' маркеров';
 }
-let debounce;map.on('moveend zoomend',()=>{clearTimeout(debounce);debounce=setTimeout(render,130)});
+let debounce;map.on('moveend zoomend',()=>{clearTimeout(debounce);debounce=setTimeout(render,250)});
 toggle.addEventListener('change',async()=>{if(!toggle.checked){render();return}status.textContent='Загрузка…';try{await load();render()}catch(e){status.textContent='Полный каталог ещё не опубликован';info.textContent='Подготовлен импорт GeoNames. После первого запуска сборки GitHub Actions здесь появятся все населённые пункты из каталога. '+e.message;toggle.checked=false}});
 fetch('data/places/manifest.json',{method:'HEAD'}).then(r=>{status.textContent=r.ok?'Каталог готов • включи слой':'Ожидается первая сборка каталога'}).catch(()=>{status.textContent='Ожидается первая сборка каталога'});
 </script></body></html>
