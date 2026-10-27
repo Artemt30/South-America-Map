@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "turn": 0,
+  "player": "AT",
+  "assets": [],
+  "note": "Player-visible projection only. Never publish private GAME_STATE.json."
+}
