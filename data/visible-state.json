@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "turn": 19,
+  "turn": 22,
   "player": "AT",
   "own": {
-    "cash": 23400000,
-    "income_per_cycle": 11600000,
+    "cash": 51000000,
+    "income_per_cycle": 18400000,
     "expenses_per_cycle": 0,
     "operational_radars": 0
   },
@@ -118,15 +118,6 @@
       "status": "operational"
     },
     {
-      "id": "AT-turn19-oil-camacari",
-      "owner": "AT",
-      "type": "oil_facility",
-      "name": "Нефтедобыча — Camaçari",
-      "lat": -12.6976,
-      "lon": -38.3241,
-      "status": "under_construction"
-    },
-    {
       "id": "AT-turn12-iron-castings",
       "owner": "AT",
       "type": "iron_castings_medium",
@@ -134,7 +125,43 @@
       "lat": -5.795,
       "lon": -35.209,
       "status": "operational"
+    },
+    {
+      "id": "AT-turn19-oil-camacari",
+      "owner": "AT",
+      "type": "oil_facility",
+      "name": "Нефтедобыча — Camaçari",
+      "lat": -12.6976,
+      "lon": -38.3241,
+      "status": "operational"
+    },
+    {
+      "id": "AT-turn20-oil_facility",
+      "owner": "AT",
+      "type": "oil_facility",
+      "name": "Нефтедобыча — Dias d'Ávila",
+      "lat": -12.6146,
+      "lon": -38.2972,
+      "status": "operational"
+    },
+    {
+      "id": "AT-turn21-oil-santo-amaro",
+      "owner": "AT",
+      "type": "oil_facility",
+      "name": "Нефтедобыча — Santo Amaro",
+      "lat": -12.5472,
+      "lon": -38.711,
+      "status": "operational"
+    },
+    {
+      "id": "AT-turn22-oil-feira",
+      "owner": "AT",
+      "type": "oil_facility",
+      "name": "Нефтедобыча — Feira de Santana",
+      "lat": -12.2664,
+      "lon": -38.9663,
+      "status": "under_construction"
     }
   ],
-  "notice": "Неделя 19 завершена. Чугунный завод Натал готов. Олинда работает; Камасари строится."
+  "notice": "22-я неделя завершена: очередь новых строек AT исчерпана. Фейра-ди-Сантана в строительстве; Сова исследуется."
 }
