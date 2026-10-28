@@ -1,4 +1,4 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>South America Strategy</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><style>body{margin:0;background:#0d1722;color:#e6f0f6;font:15px system-ui}header{padding:15px 18px;background:#122535}h1{font-size:19px;margin:0 0 5px}small{color:#a4b7c3}main{padding:12px}.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:10px 2px}input{accent-color:#38a8e0}#map{height:68vh;min-height:410px;border-radius:12px;background:#10212d}#info{padding:12px;background:#173044;border-radius:10px;margin-top:10px;line-height:1.5}.leaflet-container{background:#0c2332}.city-dot{border-radius:50%;background:#39a9ed;border:1px solid white;box-shadow:0 0 4px #125273}.cluster-dot{border-radius:50%;background:#207ca8;border:2px solid #bde6ff;color:white;text-align:center;font:bold 12px system-ui;display:grid;place-items:center}.dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:8px;margin:10px 0}.metric{padding:12px;background:#173044;border:1px solid #315166;border-radius:10px}.metric strong{display:block;font-size:18px;margin-top:4px}.metric small{font-size:12px}.panel{background:#122535;border:1px solid #315166;padding:12px;border-radius:10px;margin:10px 0}.panel h2{font-size:16px;margin:0 0 8px}.panel p{margin:6px 0;color:#c5d6e0}.muted{color:#a4b7c3}</style></head><body><header><h1>South America Strategy</h1><small>Карта v0.4 • кампания не запущена</small></header><main><div class="controls"><label><input id="potential" type="checkbox"> Потенциальные точки</label><label><input id="assets" type="checkbox" checked> Объекты и разведка</label><small id="status">Загрузка каталога…</small></div><section class="dashboard" aria-label="Моё командование"><div class="metric"><small>Игровая неделя</small><strong id="hud-turn">0</strong></div><div class="metric"><small>Казна</small><strong id="hud-cash">—</strong></div><div class="metric"><small>Доход / цикл</small><strong id="hud-income">—</strong></div><div class="metric"><small>Расход / цикл</small><strong id="hud-cost">—</strong></div></section><section class="panel"><h2>Мои силы и инфраструктура</h2><p id="hud-assets">Кампания ещё не запущена.</p><p id="hud-radar">Радары: нет действующих станций.</p><small class="muted">Вражеские объекты показываются только после обнаружения. Полные данные других участников недоступны.</small></section><div id="map"></div><div id="info">Включи слой «Потенциальные точки». На общем масштабе поселения группируются; при приближении доступны отдельные населённые пункты.</div></main><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>South America Strategy</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"><style>body{margin:0;background:#0d1722;color:#e6f0f6;font:15px system-ui}header{padding:15px 18px;background:#122535}h1{font-size:19px;margin:0 0 5px}small{color:#a4b7c3}main{padding:12px}.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:10px 2px}input{accent-color:#38a8e0}#map{height:68vh;min-height:410px;border-radius:12px;background:#10212d}#info{padding:12px;background:#173044;border-radius:10px;margin-top:10px;line-height:1.5}.leaflet-container{background:#0c2332}.city-dot{border-radius:50%;background:#39a9ed;border:1px solid white;box-shadow:0 0 4px #125273}.cluster-dot{border-radius:50%;background:#207ca8;border:2px solid #bde6ff;color:white;text-align:center;font:bold 12px system-ui;display:grid;place-items:center}.dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:8px;margin:10px 0}.metric{padding:12px;background:#173044;border:1px solid #315166;border-radius:10px}.metric strong{display:block;font-size:18px;margin-top:4px}.metric small{font-size:12px}.panel{background:#122535;border:1px solid #315166;padding:12px;border-radius:10px;margin:10px 0}.panel h2{font-size:16px;margin:0 0 8px}.panel p{margin:6px 0;color:#c5d6e0}.muted{color:#a4b7c3}</style></head><body><header><h1>South America Strategy</h1><small>Карта v0.5 • топ-1000 населённых пунктов</small></header><main><div class="controls"><label><input id="potential" type="checkbox"> Потенциальные точки</label><label><input id="assets" type="checkbox" checked> Объекты и разведка</label><small id="status">Загрузка каталога…</small></div><section class="dashboard" aria-label="Моё командование"><div class="metric"><small>Игровая неделя</small><strong id="hud-turn">0</strong></div><div class="metric"><small>Казна</small><strong id="hud-cash">—</strong></div><div class="metric"><small>Доход / цикл</small><strong id="hud-income">—</strong></div><div class="metric"><small>Расход / цикл</small><strong id="hud-cost">—</strong></div></section><section class="panel"><h2>Мои силы и инфраструктура</h2><p id="hud-assets">Кампания ещё не запущена.</p><p id="hud-radar">Радары: нет действующих станций.</p><small class="muted">Вражеские объекты показываются только после обнаружения. Полные данные других участников недоступны.</small></section><div id="map"></div><div id="info">Включи слой «Потенциальные точки», чтобы увидеть 1000 крупнейших населённых пунктов Южной Америки.</div></main><script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script><script>if(!window.L){document.getElementById("map").textContent="Не удалось загрузить карту Leaflet. Проверь подключение к CDN или блокировщик расширений.";}</script><script>
 const map=L.map('map',{preferCanvas:true}).setView([-15,-60],4);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap contributors • GeoNames CC BY 4.0'}).addTo(map);
 const status=document.getElementById('status'),toggle=document.getElementById('potential'),info=document.getElementById('info');
@@ -9,16 +9,20 @@ const sample=[['Мараба',-5.3686,-49.1178],['Лима',-12.0464,-77.0428],[
 async function load(){
  if(loaded)return;
  if(loading)return loading;
- loading=(async()=>{const manifest=await fetch('data/places/manifest.json',{cache:'no-cache'});if(!manifest.ok)throw Error('Каталог ещё не собран');
- const meta=await manifest.json();let count=0;for(const code of Object.keys(meta.countries)){const r=await fetch('data/places/'+code+'.json');if(!r.ok)throw Error('Не загружена страна '+code);const arr=await r.json();places.push(...arr);count+=arr.length;status.textContent='Загружено: '+count.toLocaleString('ru-RU');}
- loaded=true;status.textContent='Населённых пунктов: '+places.length.toLocaleString('ru-RU');})();
+ loading=(async()=>{
+  const response=await fetch('data/places/top1000.json',{cache:'no-cache'});
+  if(!response.ok)throw Error('Каталог топ-1000 ещё создаётся');
+  places=await response.json();
+  if(!Array.isArray(places)||places.length!==1000)throw Error('Ожидалось ровно 1000 населённых пунктов');
+  loaded=true;status.textContent='Топ-1000 населённых пунктов';
+ })();
  try{await loading;}finally{loading=null;}
 }
 function render(){
  layer.clearLayers();if(!toggle.checked||!loaded)return;
  const z=map.getZoom(),b=map.getBounds().pad(.05);
  // ~3x coarser spatial cells; cap markers on every zoom level for mobile.
- const base=z<6?1.8:z<8?.55:z<10?.14:z<12?.035:.009;
+ const base=z<6?.9:z<8?.275:z<10?.07:z<12?.0175:.0045;
  let cell=base*3,groups=new Map(),visible=0;
  const selected=[];
  for(const p of places){if(b.contains([p[2],p[3]])){selected.push(p);visible++}}
@@ -31,7 +35,7 @@ function render(){
  }
  groups=groupBy(cell);
  // Ensure mobile DOM never receives thousands of marker nodes.
- for(let i=0;i<12&&groups.size>350;i++){cell*=1.6;groups=groupBy(cell)}
+ for(let i=0;i<12&&groups.size>700;i++){cell*=1.4;groups=groupBy(cell)}
  for(const g of groups.values()){
   const lat=g.lat/g.n,lon=g.lon/g.n;
   const marker=L.marker([lat,lon],{icon:L.divIcon({className:g.n>1?'cluster-dot':'city-dot',html:g.n>1?String(g.n):'',iconSize:g.n>1?[30,30]:[10,10],iconAnchor:g.n>1?[15,15]:[5,5]})});
@@ -41,8 +45,8 @@ function render(){
  status.textContent='На экране: '+visible.toLocaleString('ru-RU')+' точек • '+groups.size.toLocaleString('ru-RU')+' маркеров';
 }
 let debounce;map.on('moveend zoomend',()=>{clearTimeout(debounce);debounce=setTimeout(render,250)});
-toggle.addEventListener('change',async()=>{if(!toggle.checked){render();return}status.textContent='Загрузка…';try{await load();render()}catch(e){status.textContent='Полный каталог ещё не опубликован';info.textContent='Подготовлен импорт GeoNames. После первого запуска сборки GitHub Actions здесь появятся все населённые пункты из каталога. '+e.message;toggle.checked=false}});
-fetch('data/places/manifest.json',{method:'HEAD'}).then(r=>{status.textContent=r.ok?'Каталог готов • включи слой':'Ожидается первая сборка каталога'}).catch(()=>{status.textContent='Ожидается первая сборка каталога'});
+toggle.addEventListener('change',async()=>{if(!toggle.checked){render();return}status.textContent='Загрузка…';try{await load();render()}catch(e){status.textContent='Каталог топ-1000 ещё не опубликован';info.textContent='Каталог крупнейших городов собирается автоматически. '+e.message;toggle.checked=false}});
+fetch('data/places/top1000.json',{method:'HEAD'}).then(r=>{status.textContent=r.ok?'Каталог готов • включи слой':'Ожидается первая сборка каталога'}).catch(()=>{status.textContent='Ожидается первая сборка каталога'});
 
 // Real assets use their own layer, never the settlement clustering or 350-marker cap.
 // Only player-visible projection is consumed here; hidden enemy state must stay private.
