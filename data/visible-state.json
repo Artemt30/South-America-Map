@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "turn": 17,
+  "turn": 19,
   "player": "AT",
   "own": {
-    "cash": 18000000,
-    "income_per_cycle": 9800000,
+    "cash": 23400000,
+    "income_per_cycle": 11600000,
     "expenses_per_cycle": 0,
     "operational_radars": 0
   },
@@ -106,8 +106,35 @@
       "name": "Нефтедобыча — Recife",
       "lat": -8.05389,
       "lon": -34.88111,
+      "status": "operational"
+    },
+    {
+      "id": "AT-turn18-oil-olinda",
+      "owner": "AT",
+      "type": "oil_facility",
+      "name": "Нефтедобыча — Olinda",
+      "lat": -8.00889,
+      "lon": -34.85528,
+      "status": "operational"
+    },
+    {
+      "id": "AT-turn19-oil-camacari",
+      "owner": "AT",
+      "type": "oil_facility",
+      "name": "Нефтедобыча — Camaçari",
+      "lat": -12.6976,
+      "lon": -38.3241,
       "status": "under_construction"
+    },
+    {
+      "id": "AT-turn12-iron-castings",
+      "owner": "AT",
+      "type": "iron_castings_medium",
+      "name": "Чугунный завод — Natal",
+      "lat": -5.795,
+      "lon": -35.209,
+      "status": "operational"
     }
   ],
-  "notice": "Неделя 17 завершена; исследование самолёта Сова запущено. Перед неделей 18 ожидаются новые ТТХ."
+  "notice": "Неделя 19 завершена. Чугунный завод Натал готов. Олинда работает; Камасари строится."
 }
