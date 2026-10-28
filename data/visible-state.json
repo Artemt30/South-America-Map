@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "turn": 22,
+  "turn": 23,
   "player": "AT",
   "own": {
-    "cash": 51000000,
-    "income_per_cycle": 18400000,
+    "cash": 41400000,
+    "income_per_cycle": 19000000,
     "expenses_per_cycle": 0,
     "operational_radars": 0
   },
@@ -160,8 +160,17 @@
       "name": "Нефтедобыча — Feira de Santana",
       "lat": -12.2664,
       "lon": -38.9663,
+      "status": "operational"
+    },
+    {
+      "id": "AT-turn23-iron-petrolina",
+      "owner": "AT",
+      "type": "iron_castings_medium",
+      "name": "Завод чугунных изделий — Petrolina",
+      "lat": -9.3891,
+      "lon": -40.5031,
       "status": "under_construction"
     }
   ],
-  "notice": "22-я неделя завершена: очередь новых строек AT исчерпана. Фейра-ди-Сантана в строительстве; Сова исследуется."
+  "notice": "Неделя 23 завершена. Строительство чугунного завода в Петролине начато. Сова — 1 неделя до завершения."
 }
