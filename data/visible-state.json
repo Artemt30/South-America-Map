@@ -53,6 +53,194 @@
       "lat": -1.4558,
       "lon": -48.4902,
       "status": "operational"
+    },
+    {
+      "id": "AT-turn8-oil_facility",
+      "owner": "AT",
+      "type": "oil_facility",
+      "name": "Нефтяное предприятие — Macapá",
+      "lat": 0.0349,
+      "lon": -51.0694,
+      "status": "under_construction",
+      "details": {
+        "completion_date": "2026-12-30",
+        "operational_from": "2026-12-30"
+      }
+    },
+    {
+      "id": "capital-AT",
+      "owner": "AT",
+      "type": "capital",
+      "name": "Столица Natal",
+      "lat": -5.795,
+      "lon": -35.209,
+      "status": "public_capital"
+    },
+    {
+      "id": "capital-M",
+      "owner": "M",
+      "type": "capital",
+      "name": "Столица Bogotá",
+      "lat": 4.711,
+      "lon": -74.072,
+      "status": "public_capital"
+    },
+    {
+      "id": "capital-S",
+      "owner": "S",
+      "type": "capital",
+      "name": "Столица Lima",
+      "lat": -12.046,
+      "lon": -77.043,
+      "status": "public_capital"
+    },
+    {
+      "id": "capital-MK",
+      "owner": "MK",
+      "type": "capital",
+      "name": "Столица Buenos Aires",
+      "lat": -34.604,
+      "lon": -58.382,
+      "status": "public_capital"
+    },
+    {
+      "id": "capital-AR",
+      "owner": "AR",
+      "type": "capital",
+      "name": "Столица Brasília",
+      "lat": -15.793,
+      "lon": -47.882,
+      "status": "public_capital"
     }
-  ]
+  ],
+  "capitals": [
+    {
+      "id": "capital-AT",
+      "owner": "AT",
+      "type": "capital",
+      "name": "Столица Natal",
+      "lat": -5.795,
+      "lon": -35.209,
+      "status": "public_capital"
+    },
+    {
+      "id": "capital-M",
+      "owner": "M",
+      "type": "capital",
+      "name": "Столица Bogotá",
+      "lat": 4.711,
+      "lon": -74.072,
+      "status": "public_capital"
+    },
+    {
+      "id": "capital-S",
+      "owner": "S",
+      "type": "capital",
+      "name": "Столица Lima",
+      "lat": -12.046,
+      "lon": -77.043,
+      "status": "public_capital"
+    },
+    {
+      "id": "capital-MK",
+      "owner": "MK",
+      "type": "capital",
+      "name": "Столица Buenos Aires",
+      "lat": -34.604,
+      "lon": -58.382,
+      "status": "public_capital"
+    },
+    {
+      "id": "capital-AR",
+      "owner": "AR",
+      "type": "capital",
+      "name": "Столица Brasília",
+      "lat": -15.793,
+      "lon": -47.882,
+      "status": "public_capital"
+    }
+  ],
+  "public_technology_announcements": [
+    {
+      "cycle": 4,
+      "faction": "M",
+      "id": "duga",
+      "name": "Дуга",
+      "category": "mobile_tactical_missile_launcher",
+      "unit_cost": 5000000,
+      "metadata": {
+        "max_hp": 100,
+        "launch_cells": 1,
+        "caliber": "M1",
+        "platform": "mobile",
+        "intended_missile_type": "ballistic_guided"
+      }
+    },
+    {
+      "cycle": 4,
+      "faction": "MK",
+      "id": "palash",
+      "name": "Палаш",
+      "category": "fixed_air_defense_launcher",
+      "unit_cost": 9000000,
+      "metadata": {
+        "range_km": 300,
+        "radar_range_km": 300,
+        "max_hp": 100,
+        "launch_cells": 4,
+        "caliber": "MK1",
+        "integrated_radar": true,
+        "platform": "stationary"
+      }
+    },
+    {
+      "cycle": 6,
+      "faction": "AT",
+      "id": "prorok",
+      "name": "Пророк",
+      "category": "mobile_air_defense_launcher",
+      "unit_cost": 8000000,
+      "metadata": {
+        "max_hp": 100,
+        "radar_range_km": 300,
+        "launch_cells": 2,
+        "caliber": "AT-1",
+        "integrated_radar": true,
+        "platform": "tracked_mobile"
+      }
+    },
+    {
+      "cycle": 6,
+      "faction": "S",
+      "id": "oko",
+      "name": "Око",
+      "category": "mobile_radar",
+      "unit_cost": 25000000,
+      "metadata": {
+        "range_km": 2000,
+        "max_hp": 100,
+        "platform": "mobile",
+        "radar_kind": "surveillance"
+      }
+    },
+    {
+      "cycle": 6,
+      "faction": "AR",
+      "id": "lastochka",
+      "name": "Ласточка",
+      "category": "uav",
+      "unit_cost": 17000000,
+      "metadata": {
+        "max_hp": 100,
+        "radar_range_km": 400,
+        "speed_kmh": 400,
+        "range_km": 3200,
+        "production_units_per_cycle": 1,
+        "platform": "aircraft",
+        "size_class": "medium",
+        "role": "reconnaissance"
+      }
+    }
+  ],
+  "notice": "Неделя 8 завершена. Капиталы общеизвестны; неизвестные объекты скрыты."
 }
