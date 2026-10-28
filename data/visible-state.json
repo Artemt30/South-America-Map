@@ -3,5 +3,11 @@
   "turn": 0,
   "player": "AT",
   "assets": [],
-  "note": "Player-visible projection only. Never publish private GAME_STATE.json."
+  "note": "Only player-owned data and discovered contacts; no private enemy records.",
+  "own": {
+    "cash": null,
+    "income_per_cycle": null,
+    "expenses_per_cycle": null,
+    "operational_radars": 0
+  }
 }
