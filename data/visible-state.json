@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "turn": 4,
+  "turn": 8,
   "player": "AT",
   "own": {
-    "cash": 9600000,
-    "income_per_cycle": 5600000,
+    "cash": 11000000,
+    "income_per_cycle": 7400000,
     "expenses_per_cycle": 0,
     "operational_radars": 0
   },
@@ -25,6 +25,33 @@
       "name": "Нефтяное предприятие — Сальвадор",
       "lat": -12.9714,
       "lon": -38.5014,
+      "status": "operational"
+    },
+    {
+      "id": "AT-week4-oil_facility",
+      "owner": "AT",
+      "type": "oil_facility",
+      "name": "Нефтяное предприятие — Teresina",
+      "lat": -5.0892,
+      "lon": -42.8019,
+      "status": "operational"
+    },
+    {
+      "id": "AT-turn5-oil_facility",
+      "owner": "AT",
+      "type": "oil_facility",
+      "name": "Нефтяное предприятие — São Luís",
+      "lat": -2.5297,
+      "lon": -44.3028,
+      "status": "operational"
+    },
+    {
+      "id": "AT-turn7-oil_facility",
+      "owner": "AT",
+      "type": "oil_facility",
+      "name": "Нефтяное предприятие — Belém",
+      "lat": -1.4558,
+      "lon": -48.4902,
       "status": "operational"
     }
   ]
