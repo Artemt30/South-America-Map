@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "turn": 13,
+  "turn": 14,
   "player": "AT",
   "own": {
     "cash": 14400000,
-    "income_per_cycle": 8000000,
+    "income_per_cycle": 8600000,
     "expenses_per_cycle": 0,
     "operational_radars": 0
   },
@@ -61,6 +61,15 @@
       "name": "Нефтяное предприятие — Macapá",
       "lat": 0.0349,
       "lon": -51.0694,
+      "status": "operational"
+    },
+    {
+      "id": "AT-turn13-oil-goiana",
+      "owner": "AT",
+      "type": "oil_facility",
+      "name": "Нефтяное предприятие — Goiana",
+      "lat": -7.56056,
+      "lon": -35.0025,
       "status": "operational"
     }
   ]
