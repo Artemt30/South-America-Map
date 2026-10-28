@@ -2,12 +2,11 @@
   "schema_version": 1,
   "turn": 0,
   "player": "AT",
-  "assets": [],
-  "note": "Only player-owned data and discovered contacts; no private enemy records.",
   "own": {
     "cash": null,
     "income_per_cycle": null,
     "expenses_per_cycle": null,
     "operational_radars": 0
-  }
+  },
+  "assets": []
 }
