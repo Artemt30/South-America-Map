@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "turn": 16,
+  "turn": 17,
   "player": "AT",
   "own": {
-    "cash": 16200000,
-    "income_per_cycle": 9200000,
+    "cash": 18000000,
+    "income_per_cycle": 9800000,
     "expenses_per_cycle": 0,
     "operational_radars": 0
   },
@@ -94,11 +94,20 @@
       "id": "AT-turn16-abreu-oil",
       "owner": "AT",
       "type": "oil_facility",
-      "name": "Нефтедобыча — Абреу-и-Лима",
+      "name": "Нефтедобыча — Abreu e Lima",
       "lat": -7.91167,
       "lon": -34.90278,
+      "status": "operational"
+    },
+    {
+      "id": "AT-turn17-oil-recife",
+      "owner": "AT",
+      "type": "oil_facility",
+      "name": "Нефтедобыча — Recife",
+      "lat": -8.05389,
+      "lon": -34.88111,
       "status": "under_construction"
     }
   ],
-  "notice": "Неделя 16 завершена. Начало недели 17; следующий ход ожидает новые ТТХ."
+  "notice": "Неделя 17 завершена; исследование самолёта Сова запущено. Перед неделей 18 ожидаются новые ТТХ."
 }
