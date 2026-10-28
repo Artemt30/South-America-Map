@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "turn": 26,
+  "turn": 30,
   "player": "AT",
   "own": {
-    "cash": 42400000,
-    "income_per_cycle": 19000000,
+    "cash": 34400000,
+    "income_per_cycle": 24000000,
     "expenses_per_cycle": 0,
     "operational_radars": 0
   },
@@ -76,7 +76,7 @@
       "id": "AT-turn14-oil-igarassu",
       "owner": "AT",
       "type": "oil_facility",
-      "name": "Нефтедобыча — Игарасу",
+      "name": "Нефтяное предприятие — Игарасу",
       "lat": -7.83417,
       "lon": -34.90639,
       "status": "operational"
@@ -85,7 +85,7 @@
       "id": "AT-turn15-paulista-oil",
       "owner": "AT",
       "type": "oil_facility",
-      "name": "Нефтедобыча — Паулиста",
+      "name": "Нефтяное предприятие — Paulista",
       "lat": -7.94083,
       "lon": -34.87306,
       "status": "operational"
@@ -94,7 +94,7 @@
       "id": "AT-turn16-abreu-oil",
       "owner": "AT",
       "type": "oil_facility",
-      "name": "Нефтедобыча — Abreu e Lima",
+      "name": "Нефтяное предприятие — Abreu e Lima",
       "lat": -7.91167,
       "lon": -34.90278,
       "status": "operational"
@@ -109,21 +109,21 @@
       "status": "operational"
     },
     {
+      "id": "AT-turn12-iron-castings",
+      "owner": "AT",
+      "type": "iron_castings_medium",
+      "name": "Завод чугунных изделий",
+      "lat": -5.795,
+      "lon": -35.209,
+      "status": "operational"
+    },
+    {
       "id": "AT-turn18-oil-olinda",
       "owner": "AT",
       "type": "oil_facility",
       "name": "Нефтедобыча — Olinda",
       "lat": -8.00889,
       "lon": -34.85528,
-      "status": "operational"
-    },
-    {
-      "id": "AT-turn12-iron-castings",
-      "owner": "AT",
-      "type": "iron_castings_medium",
-      "name": "Чугунный завод — Natal",
-      "lat": -5.795,
-      "lon": -35.209,
       "status": "operational"
     },
     {
@@ -139,7 +139,7 @@
       "id": "AT-turn20-oil_facility",
       "owner": "AT",
       "type": "oil_facility",
-      "name": "Нефтедобыча — Dias d'Ávila",
+      "name": "Нефтяное предприятие — Dias d'Ávila",
       "lat": -12.6146,
       "lon": -38.2972,
       "status": "operational"
@@ -148,7 +148,7 @@
       "id": "AT-turn21-oil-santo-amaro",
       "owner": "AT",
       "type": "oil_facility",
-      "name": "Нефтедобыча — Santo Amaro",
+      "name": "Нефтяное предприятие — Santo Amaro",
       "lat": -12.5472,
       "lon": -38.711,
       "status": "operational"
@@ -157,7 +157,7 @@
       "id": "AT-turn22-oil-feira",
       "owner": "AT",
       "type": "oil_facility",
-      "name": "Нефтедобыча — Feira de Santana",
+      "name": "Нефтяное предприятие — Feira de Santana",
       "lat": -12.2664,
       "lon": -38.9663,
       "status": "operational"
@@ -169,13 +169,13 @@
       "name": "Завод чугунных изделий — Petrolina",
       "lat": -9.3891,
       "lon": -40.5031,
-      "status": "under_construction"
+      "status": "operational"
     },
     {
       "id": "AT-turn24-iron-juazeiro",
       "owner": "AT",
       "type": "iron_castings_medium",
-      "name": "Чугунный завод — Juazeiro",
+      "name": "Завод чугунных изделий — Juazeiro",
       "lat": -9.4119,
       "lon": -40.503,
       "status": "under_construction"
@@ -184,11 +184,38 @@
       "id": "AT-turn25-iron-abreu",
       "owner": "AT",
       "type": "iron_castings_medium",
-      "name": "Чугунный завод — Abreu e Lima",
+      "name": "Завод чугунных изделий — Abreu e Lima",
       "lat": -7.91167,
       "lon": -34.90278,
       "status": "under_construction"
+    },
+    {
+      "id": "AT-turn27-iron-paulista",
+      "owner": "AT",
+      "type": "iron_castings_medium",
+      "name": "Завод чугунных изделий — Paulista",
+      "lat": -7.94083,
+      "lon": -34.87306,
+      "status": "under_construction"
+    },
+    {
+      "id": "AT-turn28-iron-olinda",
+      "owner": "AT",
+      "type": "iron_castings_medium",
+      "name": "Завод чугунных изделий — Olinda",
+      "lat": -8.00889,
+      "lon": -34.85528,
+      "status": "under_construction"
+    },
+    {
+      "id": "AT-turn30-iron-recife",
+      "owner": "AT",
+      "type": "iron_castings_medium",
+      "name": "Завод чугунных изделий — Recife",
+      "lat": -8.05389,
+      "lon": -34.88111,
+      "status": "under_construction"
     }
   ],
-  "notice": "Неделя 26 завершена. Молот исследуется; перед 27-й неделей ожидаются новые ТТХ."
+  "notice": "Неделя 30: «Молот» разработан. Чугунный завод в Петролине работает, пять заводов строятся."
 }
