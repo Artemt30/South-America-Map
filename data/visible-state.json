@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "turn": 23,
+  "turn": 24,
   "player": "AT",
   "own": {
-    "cash": 41400000,
+    "cash": 32400000,
     "income_per_cycle": 19000000,
     "expenses_per_cycle": 0,
     "operational_radars": 0
@@ -170,7 +170,16 @@
       "lat": -9.3891,
       "lon": -40.5031,
       "status": "under_construction"
+    },
+    {
+      "id": "AT-turn24-iron-juazeiro",
+      "owner": "AT",
+      "type": "iron_castings_medium",
+      "name": "Чугунный завод — Juazeiro",
+      "lat": -9.4119,
+      "lon": -40.503,
+      "status": "under_construction"
     }
   ],
-  "notice": "Неделя 23 завершена. Строительство чугунного завода в Петролине начато. Сова — 1 неделя до завершения."
+  "notice": "Неделя 24 завершена: исследование самолёта «Сова» завершено. Чугунный завод в Juazeiro строится."
 }
