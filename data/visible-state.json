@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "turn": 1,
+  "turn": 2,
   "player": "AT",
   "own": {
-    "cash": 10000000,
+    "cash": 7000000,
     "income_per_cycle": 5000000,
     "expenses_per_cycle": 0,
     "operational_radars": 0
@@ -17,6 +17,21 @@
       "lat": -5.795,
       "lon": -35.209,
       "status": "operational"
+    },
+    {
+      "id": "AT-salvador-oil-1",
+      "owner": "AT",
+      "type": "oil_facility",
+      "name": "Нефтяное предприятие — Сальвадор",
+      "lat": -12.9714,
+      "lon": -38.5014,
+      "status": "under_construction",
+      "details": {
+        "remaining_cycles": 1,
+        "HP": "100 / 100",
+        "income_after_completion": "600 000 $ / неделя"
+      }
     }
-  ]
+  ],
+  "notice": "Игровая неделя 2 завершена; Сальвадор: нефтяное предприятие строится, 1 ход до окончания."
 }
