@@ -4,6 +4,8 @@ import io, json, pathlib, urllib.request, zipfile
 CODES="AR BO BR CL CO EC GY GF PY PE SR UY VE FK".split()
 OUT=pathlib.Path("data/places");OUT.mkdir(parents=True,exist_ok=True)
 summary={}
+top=[]
+LIMIT=1000
 for code in CODES:
     url=f"https://download.geonames.org/export/dump/{code}.zip"
     print("Fetching",code,flush=True)
@@ -18,8 +20,14 @@ for code in CODES:
                 try:
                     entries.append([int(parts[0]),parts[1],round(float(parts[4]),5),round(float(parts[5]),5),int(parts[14] or 0)])
                 except ValueError:continue
+    top.extend([p for p in entries if p[4]>0])
+    top.sort(key=lambda p:(-p[4],p[0]))
+    top=top[:LIMIT]
     (OUT/f"{code}.json").write_text(json.dumps(entries,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
     summary[code]=len(entries)
     print(code,len(entries),flush=True)
 (OUT/"manifest.json").write_text(json.dumps({"source":"GeoNames","license":"CC BY 4.0","countries":summary,"total":sum(summary.values())},ensure_ascii=False),encoding="utf-8")
 print("TOTAL",sum(summary.values()))
+
+(OUT/"top1000.json").write_text(json.dumps(top,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
+print("TOP 1000",len(top))
