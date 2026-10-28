@@ -8,7 +8,15 @@
     "expenses_per_cycle": 0,
     "operational_radars": 0
   },
-  "assets": [],
-  "phase": "week_1_complete",
-  "notice": "Неделя 1 завершена. Исследование Пророк: 5 ходов до завершения."
+  "assets": [
+    {
+      "id": "AT-starter-plant",
+      "owner": "AT",
+      "type": "power_plant",
+      "name": "Стартовая ТЭС",
+      "lat": -5.795,
+      "lon": -35.209,
+      "status": "operational"
+    }
+  ]
 }
