@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "turn": 14,
+  "turn": 16,
   "player": "AT",
   "own": {
-    "cash": 14400000,
-    "income_per_cycle": 8600000,
+    "cash": 16200000,
+    "income_per_cycle": 9200000,
     "expenses_per_cycle": 0,
     "operational_radars": 0
   },
@@ -71,6 +71,34 @@
       "lat": -7.56056,
       "lon": -35.0025,
       "status": "operational"
+    },
+    {
+      "id": "AT-turn14-oil-igarassu",
+      "owner": "AT",
+      "type": "oil_facility",
+      "name": "Нефтедобыча — Игарасу",
+      "lat": -7.83417,
+      "lon": -34.90639,
+      "status": "operational"
+    },
+    {
+      "id": "AT-turn15-paulista-oil",
+      "owner": "AT",
+      "type": "oil_facility",
+      "name": "Нефтедобыча — Паулиста",
+      "lat": -7.94083,
+      "lon": -34.87306,
+      "status": "operational"
+    },
+    {
+      "id": "AT-turn16-abreu-oil",
+      "owner": "AT",
+      "type": "oil_facility",
+      "name": "Нефтедобыча — Абреу-и-Лима",
+      "lat": -7.91167,
+      "lon": -34.90278,
+      "status": "under_construction"
     }
-  ]
+  ],
+  "notice": "Неделя 16 завершена. Начало недели 17; следующий ход ожидает новые ТТХ."
 }
