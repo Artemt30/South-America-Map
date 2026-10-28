@@ -62,19 +62,6 @@
       "lat": 0.0349,
       "lon": -51.0694,
       "status": "operational"
-    },
-    {
-      "id": "AT-turn13-oil-goiana",
-      "owner": "AT",
-      "type": "oil_facility",
-      "name": "Нефтяное предприятие — Гояна",
-      "lat": -7.56056,
-      "lon": -35.0025,
-      "status": "under_construction",
-      "details": {
-        "completion_date": "2027-02-03"
-      }
     }
-  ],
-  "notice": "13-я неделя завершена. Чугунный завод в строительстве, нефтедобыча Гояна строится. Технология Лампа завершена."
+  ]
 }
