@@ -1,12 +1,14 @@
 {
   "schema_version": 1,
-  "turn": 0,
+  "turn": 1,
   "player": "AT",
   "own": {
-    "cash": null,
-    "income_per_cycle": null,
-    "expenses_per_cycle": null,
+    "cash": 10000000,
+    "income_per_cycle": 5000000,
+    "expenses_per_cycle": 0,
     "operational_radars": 0
   },
-  "assets": []
+  "assets": [],
+  "phase": "week_1_complete",
+  "notice": "Неделя 1 завершена. Исследование Пророк: 5 ходов до завершения."
 }
