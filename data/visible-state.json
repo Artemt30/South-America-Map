@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "turn": 11,
+  "turn": 12,
   "player": "AT",
   "own": {
-    "cash": 34400000,
+    "cash": 14400000,
     "income_per_cycle": 8000000,
     "expenses_per_cycle": 0,
     "operational_radars": 0
