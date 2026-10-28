@@ -71,7 +71,7 @@ async function loadVisibleAssets(){
   if(!response.ok)throw Error('HTTP '+response.status);
   const payload=await response.json();
   if(!Array.isArray(payload.assets))throw Error('Неверный формат assets');
-  visibleAssets=payload.assets.filter(a=>a&&typeof a==='object'&&(a.owner==='AT'||a.status==='detected'));
+  visibleAssets=payload.assets.filter(a=>a&&typeof a==='object'&&(a.owner==='AT'||a.status==='detected'||a.status==='public_capital'));
   const set=(id,v)=>document.getElementById(id).textContent=v;
   const fmt=v=>Number.isFinite(v)?Math.round(v).toLocaleString('ru-RU')+' $':'—';
   set('hud-turn',String(payload.turn??0));
