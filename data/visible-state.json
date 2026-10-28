@@ -26,22 +26,6 @@
       "lat": -12.9714,
       "lon": -38.5014,
       "status": "operational"
-    },
-    {
-      "id": "AT-week4-oil_facility",
-      "owner": "AT",
-      "type": "oil_facility",
-      "name": "Нефтяное предприятие — Терезина",
-      "lat": -5.0892,
-      "lon": -42.8019,
-      "status": "under_construction",
-      "details": {
-        "completion_date": "2026-12-02",
-        "operational_from": "2026-12-02",
-        "HP": "100 / 100",
-        "income_after_completion": "600 000 $/нед."
-      }
     }
-  ],
-  "notice": "Неделя 4 завершена. Завод в Терезине строится до 2 декабря 2026 года."
+  ]
 }
