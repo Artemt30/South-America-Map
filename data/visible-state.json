@@ -67,20 +67,10 @@
       "id": "AT-turn13-oil-goiana",
       "owner": "AT",
       "type": "oil_facility",
-      "name": "Нефтяное предприятие — Гояна",
+      "name": "Нефтяное предприятие — Goiana",
       "lat": -7.56056,
       "lon": -35.0025,
       "status": "operational"
-    },
-    {
-      "id": "AT-turn14-oil-igarassu",
-      "owner": "AT",
-      "type": "oil_facility",
-      "name": "Нефтяное предприятие — Игарасу",
-      "lat": -7.83417,
-      "lon": -34.90639,
-      "status": "under_construction"
     }
-  ],
-  "notice": "Неделя 14 завершена: Перехватчик-1 разработан, Гояна работает, Игарасу строится."
+  ]
 }
