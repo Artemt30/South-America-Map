@@ -73,21 +73,16 @@ async function loadVisibleAssets(){
   if(!Array.isArray(payload.assets))throw Error('Неверный формат assets');
   visibleAssets=payload.assets.filter(a=>a&&typeof a==='object'&&(a.owner==='AT'||a.status==='detected'));
   const set=(id,v)=>document.getElementById(id).textContent=v;
-  const fmt=v=>Number.isFinite(v)?Math.round(v).toLocaleString('ru-RU')+' 
-  renderAssets();
- }catch(error){info.textContent='Не удалось загрузить видимые игровые объекты: '+error.message}
-}
-assetToggle.addEventListener('change',renderAssets);
-loadVisibleAssets();
-</script></body></html>:'—';
-  set('hud-turn',String(Number.isInteger(payload.turn)?payload.turn:0));
+  const fmt=v=>Number.isFinite(v)?Math.round(v).toLocaleString('ru-RU')+' $':'—';
+  set('hud-turn',String(payload.turn??0));
   const own=payload.own||{};
-  set('hud-cash',fmt(own.cash));set('hud-income',fmt(own.income_per_cycle));set('hud-cost',fmt(own.expenses_per_cycle));
-  const counts={};for(const a of visibleAssets.filter(a=>a.owner==='AT'))counts[a.type||'other']=(counts[a.type||'other']||0)+1;
-  set('hud-assets',Object.keys(counts).length?Object.entries(counts).map(([k,v])=>k+': '+v).join(' • '):'Пока нет построенных объектов и подразделений.');
-  set('hud-radar','Радары: '+(own.operational_radars??0)+' действующих станций.');
+  set('hud-cash',fmt(own.cash));
+  set('hud-income',fmt(own.income_per_cycle));
+  set('hud-cost',fmt(own.expenses_per_cycle));
+  set('hud-assets',visibleAssets.filter(a=>a.owner==='AT').length+' собственных объектов');
+  set('hud-radar','Радары: '+(own.operational_radars??0));
   renderAssets();
- }catch(error){info.textContent='Не удалось загрузить видимые игровые объекты: '+error.message}
+ }catch(error){info.textContent=error.message}
 }
 assetToggle.addEventListener('change',renderAssets);
 loadVisibleAssets();
