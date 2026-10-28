@@ -3,27 +3,10 @@
   "turn": 0,
   "player": "AT",
   "own": {
-    "cash": 5000000,
-    "income_per_cycle": 5000000,
-    "expenses_per_cycle": 0,
+    "cash": null,
+    "income_per_cycle": null,
+    "expenses_per_cycle": null,
     "operational_radars": 0
   },
-  "assets": [
-    {
-      "id": "AT-starter-plant",
-      "owner": "AT",
-      "type": "power_plant",
-      "name": "Стартовая ТЭС — Натал",
-      "lat": -5.795,
-      "lon": -35.209,
-      "status": "operational",
-      "details": {
-        "HP": "1000 / 1000",
-        "income_per_cycle": "5 000 000 $",
-        "city": "Натал"
-      }
-    }
-  ],
-  "phase": "prestart_preview",
-  "notice": "Предварительная стартовая карточка. Первый ход ещё не проведён."
+  "assets": []
 }
