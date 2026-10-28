@@ -13,10 +13,13 @@
       "id": "AT-starter-plant",
       "owner": "AT",
       "type": "power_plant",
-      "name": "Стартовая ТЭС",
+      "name": "Стартовая ТЭС — Натал",
       "lat": -5.795,
       "lon": -35.209,
-      "status": "operational"
+      "status": "operational",
+      "details": {
+        "HP": "1000 / 1000"
+      }
     },
     {
       "id": "AT-salvador-oil-1",
@@ -25,7 +28,60 @@
       "name": "Нефтяное предприятие — Сальвадор",
       "lat": -12.9714,
       "lon": -38.5014,
-      "status": "operational"
+      "status": "operational",
+      "details": {
+        "HP": "100 / 100",
+        "income": "600 000 $/нед.",
+        "operational_since": "2026-11-18"
+      }
     }
-  ]
+  ],
+  "capitals": [
+    {
+      "id": "capital-AT",
+      "owner": "AT",
+      "type": "capital",
+      "name": "Столица Natal",
+      "lat": -5.795,
+      "lon": -35.209,
+      "status": "public_capital"
+    },
+    {
+      "id": "capital-M",
+      "owner": "M",
+      "type": "capital",
+      "name": "Столица Bogotá",
+      "lat": 4.711,
+      "lon": -74.072,
+      "status": "public_capital"
+    },
+    {
+      "id": "capital-S",
+      "owner": "S",
+      "type": "capital",
+      "name": "Столица Lima",
+      "lat": -12.046,
+      "lon": -77.043,
+      "status": "public_capital"
+    },
+    {
+      "id": "capital-MK",
+      "owner": "MK",
+      "type": "capital",
+      "name": "Столица Buenos Aires",
+      "lat": -34.604,
+      "lon": -58.382,
+      "status": "public_capital"
+    },
+    {
+      "id": "capital-AR",
+      "owner": "AR",
+      "type": "capital",
+      "name": "Столица Brasília",
+      "lat": -15.793,
+      "lon": -47.882,
+      "status": "public_capital"
+    }
+  ],
+  "notice": "Неделя 3 завершена; столицы общеизвестны."
 }
