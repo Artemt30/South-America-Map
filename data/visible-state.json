@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "turn": 30,
+  "turn": 37,
   "player": "AT",
   "own": {
-    "cash": 34400000,
-    "income_per_cycle": 24000000,
+    "cash": 86400000,
+    "income_per_cycle": 49000000,
     "expenses_per_cycle": 0,
     "operational_radars": 0
   },
@@ -178,7 +178,7 @@
       "name": "Завод чугунных изделий — Juazeiro",
       "lat": -9.4119,
       "lon": -40.503,
-      "status": "under_construction"
+      "status": "operational"
     },
     {
       "id": "AT-turn25-iron-abreu",
@@ -187,7 +187,7 @@
       "name": "Завод чугунных изделий — Abreu e Lima",
       "lat": -7.91167,
       "lon": -34.90278,
-      "status": "under_construction"
+      "status": "operational"
     },
     {
       "id": "AT-turn27-iron-paulista",
@@ -196,7 +196,7 @@
       "name": "Завод чугунных изделий — Paulista",
       "lat": -7.94083,
       "lon": -34.87306,
-      "status": "under_construction"
+      "status": "operational"
     },
     {
       "id": "AT-turn28-iron-olinda",
@@ -205,7 +205,7 @@
       "name": "Завод чугунных изделий — Olinda",
       "lat": -8.00889,
       "lon": -34.85528,
-      "status": "under_construction"
+      "status": "operational"
     },
     {
       "id": "AT-turn30-iron-recife",
@@ -214,8 +214,71 @@
       "name": "Завод чугунных изделий — Recife",
       "lat": -8.05389,
       "lon": -34.88111,
+      "status": "operational"
+    },
+    {
+      "id": "AT-turn31-iron-crato",
+      "owner": "AT",
+      "type": "iron_castings_medium",
+      "name": "Завод чугунных изделий — Crato",
+      "lat": -7.234,
+      "lon": -39.409,
+      "status": "under_construction"
+    },
+    {
+      "id": "AT-turn32-iron-juazeiro-do-norte",
+      "owner": "AT",
+      "type": "iron_castings_medium",
+      "name": "Завод чугунных изделий — Juazeiro do Norte",
+      "lat": -7.213,
+      "lon": -39.315,
+      "status": "under_construction"
+    },
+    {
+      "id": "AT-turn33-iron-barbalha",
+      "owner": "AT",
+      "type": "iron_castings_medium",
+      "name": "Завод чугунных изделий — Barbalha",
+      "lat": -7.311,
+      "lon": -39.303,
+      "status": "under_construction"
+    },
+    {
+      "id": "AT-turn34-iron_castings_medium-cajazeiras",
+      "owner": "AT",
+      "type": "iron_castings_medium",
+      "name": "Завод чугунных изделий — Cajazeiras",
+      "lat": -6.891,
+      "lon": -38.561,
+      "status": "under_construction"
+    },
+    {
+      "id": "AT-turn35-iron_castings_medium",
+      "owner": "AT",
+      "type": "iron_castings_medium",
+      "name": "Завод чугунных изделий — Sousa",
+      "lat": -6.759,
+      "lon": -38.231,
+      "status": "under_construction"
+    },
+    {
+      "id": "AT-turn36-iron_castings_medium",
+      "owner": "AT",
+      "type": "iron_castings_medium",
+      "name": "Завод чугунных изделий — Iguatu",
+      "lat": -6.359,
+      "lon": -39.299,
+      "status": "under_construction"
+    },
+    {
+      "id": "AT-turn37-iron_castings_medium",
+      "owner": "AT",
+      "type": "iron_castings_medium",
+      "name": "Завод чугунных изделий — Icó",
+      "lat": -6.403,
+      "lon": -38.863,
       "status": "under_construction"
     }
   ],
-  "notice": "Неделя 30: «Молот» разработан. Чугунный завод в Петролине работает, пять заводов строятся."
+  "notice": "Неделя 37 завершена. Касат исследован. Все семь новых чугунных заводов запущены, часть строится."
 }
